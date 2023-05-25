@@ -6,7 +6,9 @@
 		<meta name="author" content="www.frebsite.nl" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		
-        <title>LearnUp - Online Course & Education HTML Template</title>
+        <title>Drdo dashboard</title>
+		
+    	<link rel="icon" href="{% static 'img/drdo.png'%}">
 		
         <!-- Custom CSS -->
         <link href="{% static 'css/styles.css'%}" rel="stylesheet">
@@ -40,61 +42,41 @@
 			<!-- ============================================================== -->
 
 			<!-- ============================ Page Title Start================================== -->
-			<section class="page-title">
+			<div class="page-title py-4" >
 				<div class="container">
-					<div class="row">
-						<div class="col-lg-12 col-md-12">
-							
-							<div class="breadcrumbs-wrap">
+						<div class="col-lg-12 col-md-12 d-flex  " style="justify-content: space-between;">
+							<div>
+								<img src="{% static 'img/drdo.png'%}" alt="" style="height: 150px;">
+							</div>
+							<div class="breadcrumbs-wrap d-flex" style="flex-direction: column; align-items: left; justify-content: center;">
 								<h1 class="breadcrumb-title">Dashboard</h1>
 							
 							</div>
 							
 						</div>
-					</div>
 				</div>
-			</section>
+			</div>
 			<section class="gray pt-5">
 				<div class="container-fluid">
 										
-					<div class="row">
+					<div class="row mx-3">
 					
-						<div class="col-lg-3 col-md-3">
-							<div class="dashboard-navbar">
-								
-								<div class="d-user-avater">
-									<img src="https://via.placeholder.com/500x500" class="img-fluid avater" alt="">
-									<h4>Adam Harshvardhan</h4>
-									<span>Canada USA</span>
-								</div>
-								
-								<div class="d-navigation">
-									<ul id="side-menu">
-										<li class="active"><a href="dashboard.html"><i class="ti-user"></i>Dashboard</a></li>
-										<li><a href="my-profile.html"><i class="ti-heart"></i>My Profile</a></li>
-										
-									</ul>
-								</div>
-								
-							</div>
-							
-							
-						</div>	
 						
-						<div class="col-lg-9 col-md-9 col-sm-12">
+						
+						<div class="col-lg-8 col-md-8 col-sm-12 ">
 							
 								<div class="form-group">
 									<label>Model selection</label>
-									<select id="country" class="form-control">
+									<select id="model" class="form-control">
 										<option value="">&nbsp;</option>
-										<option value="1">United State</option>
-										<option value="2">United Kingdom</option>
-										<option value="3">India</option>
-										<option value="3">China</option>
-										<option value="3">Canada</option>
+										<option value="1">Model 1</option>
+										<option value="2">Model 2</option>
+										<option value="3">Model 3</option>
+										<option value="3">Model 4</option>
+										<option value="3">Model 5</option>
 									</select>
 								</div>
-								<div class="form-group">
+								<!-- <div class="form-group">
 									<label>Type of data</label>
 									<select id="country" class="form-control">
 										<option value="">&nbsp;</option>
@@ -104,30 +86,30 @@
 										<option value="3">China</option>
 										<option value="3">Canada</option>
 									</select>
-								</div>
+								</div> -->
 								<div class="form-group">
 									<label>Possible attacks</label>
-									<select id="country" class="form-control">
+									<select id="attack" class="form-control">
 										<option value="">&nbsp;</option>
-										<option value="1">United State</option>
-										<option value="2">United Kingdom</option>
-										<option value="3">India</option>
-										<option value="3">China</option>
-										<option value="3">Canada</option>
+										<option value="1">FGSM</option>
+										<option value="2">BIM</option>
+										<option value="3">PGD</option>
+										<option value="3">DEEP FOOL</option>
+										<option value="3">C&W</option>
 									</select>
 								</div>
 								<div class="form-group">
 									<label>Parameters</label>
-									<select id="country" class="form-control">
+									<select id="parameters" class="form-control">
 										<option value="">&nbsp;</option>
-										<option value="1">United State</option>
-										<option value="2">United Kingdom</option>
-										<option value="3">India</option>
-										<option value="3">China</option>
-										<option value="3">Canada</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="3">4</option>
+										<option value="3">5</option>
 									</select>
 								</div>
-								<div class="form-group">
+								<!-- <div class="form-group">
 									<label>Range</label>
 									<select id="country" class="form-control">
 										<option value="">&nbsp;</option>
@@ -137,11 +119,19 @@
 										<option value="3">China</option>
 										<option value="3">Canada</option>
 									</select>
-								</div>
+								</div> -->
 							
 							
 						</div>
-					
+						<div class="col-lg-4 col-md-4">
+							<div class="dashboard-navbar" style="height: 55vh;">
+								
+								
+								
+							</div>
+							
+							
+						</div>	
 					</div>
 					
 				</div>

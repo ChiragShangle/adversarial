@@ -491,8 +491,17 @@ $(function() {
 	});
 	
 	// country
-	$('#country').select2({
-		placeholder: "Choose Country",
+	$('#model').select2({
+		placeholder: "Choose model",
+		allowClear: true
+	});
+	
+	$('#attack').select2({
+		placeholder: "Choose attack",
+		allowClear: true
+	});
+	$('#parameters').select2({
+		placeholder: "Choose parameters",
 		allowClear: true
 	});
 	
