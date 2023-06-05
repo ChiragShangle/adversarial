@@ -60,74 +60,47 @@
 				<div class="container-fluid">
 										
 					<div class="row mx-3">
-					
-						
-						
 						<div class="col-lg-8 col-md-8 col-sm-12 ">
-							
-								<div class="form-group">
+							<form name = "form1" class="form"  method = "POST" >
+								{% csrf_token %}
+				   				<div class="form-group">
 									<label>Model selection</label>
-									<select id="model" class="form-control">
-										<option value="">&nbsp;</option>
-										<option value="1">Model 1</option>
-										<option value="2">Model 2</option>
-										<option value="3">Model 3</option>
-										<option value="3">Model 4</option>
-										<option value="3">Model 5</option>
+									<select  id="model" name="model" class="form-control" onChange="changecat1(this.value);">
+										<option value="" disabled selected>Select</option>
+										<option value="Model1">Model 1</option>
+										<option value="Model2">Model 2</option>
+										<option value="Model3">Model 3</option>
 									</select>
 								</div>
-								<!-- <div class="form-group">
-									<label>Type of data</label>
-									<select id="country" class="form-control">
-										<option value="">&nbsp;</option>
-										<option value="1">United State</option>
-										<option value="2">United Kingdom</option>
-										<option value="3">India</option>
-										<option value="3">China</option>
-										<option value="3">Canada</option>
-									</select>
-								</div> -->
 								<div class="form-group">
 									<label>Possible attacks</label>
-									<select id="attack" class="form-control">
-										<option value="">&nbsp;</option>
-										<option value="1">FGSM</option>
-										<option value="2">BIM</option>
-										<option value="3">PGD</option>
-										<option value="3">DEEP FOOL</option>
-										<option value="3">C&W</option>
+									<select id="attack" name="attack" class="form-control">
+										<option value="" disabled selected >Select</option>
+									
 									</select>
 								</div>
 								<div class="form-group">
 									<label>Parameters</label>
-									<select id="parameters" class="form-control">
-										<option value="">&nbsp;</option>
-										<option value="1">1</option>
+									<select id="parameters" name="parameters" class="form-control">
+										<option value="" disabled selected>Select</option>
+										<option value="eps">eps</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
-										<option value="3">4</option>
-										<option value="3">5</option>
+										<option value="4">4</option>
 									</select>
 								</div>
-								<!-- <div class="form-group">
-									<label>Range</label>
-									<select id="country" class="form-control">
-										<option value="">&nbsp;</option>
-										<option value="1">United State</option>
-										<option value="2">United Kingdom</option>
-										<option value="3">India</option>
-										<option value="3">China</option>
-										<option value="3">Canada</option>
-									</select>
-								</div> -->
-							
-							
+								<button type="submit" class="btn-red btn-md full-width ">Submit</button>
+							</form>
 						</div>
 						<div class="col-lg-4 col-md-4">
-							<div class="dashboard-navbar" style="height: 55vh;">
-								
-								
-								
+							<div class="dashboard-navbar"  style="height: 55vh;">
+								<h3>Model:</h3>								<h2>{{model}}</h2>
+								<h3>Attack:</h3>
+								<h2>{{attack}}</h2>
+								<h3>Parameter:</h3>
+								<h2>{{parameter}}</h2>
+								<h3>Range:</h3>
+								<h2>Range</h2>
 							</div>
 							
 							
@@ -161,13 +134,40 @@
 		<!-- This page plugins -->
 		<!-- ============================================================== -->
 		<script>
-			function openNav() {
-			  document.getElementById("filter-sidebar").style.width = "320px";
-			}
+			  var attack1 = {
+    Model1: ["FGSM", "PGD", "DEEP FOOL"],
+    Model2: ["FGSM", "PGD", "DEEP FOOL","BIM"],
+    Model3: ["FGSM", "PGD", "DEEP FOOL","BIM","C&W"]
+}
 
-			function closeNav() {
-			  document.getElementById("filter-sidebar").style.width = "0";
-			}
+    function changecat1(value) {
+        if (value.length == 0) document.getElementById("attack").innerHTML = "<option></option>";
+        else {
+            var catOptions = "";
+            for (categoryId in attack1[value]) {
+                catOptions += "<option>" + attack1[value][categoryId] + "</option>";
+            }
+            document.getElementById("attack").innerHTML = catOptions;
+        }
+    }
+// 	var param1 = {
+//     0: ["1"],
+//     1: ["1", "2"],
+//     2: ["1", "2", "3"],
+// 	3: ["1", "2", "3", "4"],
+// 	4: ["1", "2", "3", "4", "5"]
+// }
+	
+//     function changecat2(value) {
+//         if (value.length == 0) document.getElementById("parameters").innerHTML = "<option></option>";
+//         else {
+//             var param = "";
+//             for (categoryI in attack1[value]) {
+//                 param += "<option>" + param1[value][categoryI] + "</option>";
+//             }
+//             document.getElementById("parameters").innerHTML = param;
+//         }
+//     }
 		</script>
 
 	</body>
