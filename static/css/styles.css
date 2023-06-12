@@ -1,10 +1,4 @@
-/*
-* Theme Name: LearnUp - Education HTML Template
-* Author: Themezhub
-* Version: 1.0
-* Last Change: 08 July 2020
-  Author URI    : https://themezhub.com/
--------------------------------------------------------------------*/
+
 /*------------- List Of Table -----------
 # Fonts
 # Preloader
@@ -66,6 +60,67 @@ ul{
 	margin:0;
 }
 
+.card4,
+.card1,
+.card2,
+.card3 {
+    /* perspective: 1000px; */
+    position: relative;
+
+    margin: 0 ;
+    padding: 0;
+    
+  }
+  
+  .card-front,
+  .card-back {
+    top: 0;
+    position: absolute;
+    height: 25vh; 
+    background-color:#D9D9D9;
+    text-align: center; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+  }
+    
+  .card-back {
+    transform: rotateY(180deg);
+    padding: 2em 1rem;
+    width: 100%;
+  }
+  
+  .card4.flipped .card-front {
+    transform: rotateY(180deg);
+  }
+  
+  .card4.flipped .card-back {
+    transform: rotateY(0deg);
+  }
+  .card1.flipped1 .card-front {
+    transform: rotateY(180deg);
+  }
+  
+  .card1.flipped1 .card-back {
+    transform: rotateY(0deg);
+  }
+  .card2.flipped2 .card-front {
+    transform: rotateY(180deg);
+  }
+  
+  .card2.flipped2 .card-back {
+    transform: rotateY(0deg);
+  }
+  .card3.flipped3 .card-front {
+    transform: rotateY(180deg);
+  }
+  
+  .card3.flipped3 .card-back {
+    transform: rotateY(0deg);
+  }
+  
 /*--- end of preloader ---*/
 /*------------------------------------------------------------
 	Global Settings

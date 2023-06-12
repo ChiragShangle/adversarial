@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="www.frebsite.nl" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+        <title>Dashboard</title>
+		
+    	<link rel="icon" href="{% static 'img/drdo.png'%}">
+		
+        <!-- Custom CSS -->
+        <link href="{% static 'css/styles.css'%}" rel="stylesheet">
+		<!-- Custom Color Option -->
+		<link href="{% static 'css/colors.css'%}" rel="stylesheet">
+		
+    </head>
+	
+    <body class="red-skin">
+	
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css'%} -->
+        <!-- ============================================================== -->
+        <div id="preloader"><div class="preloader"><span></span><span></span></div></div>
+		
+		
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
+		
+            <!-- ============================================================== -->
+            <!-- Top header  -->
+            <!-- ============================================================== -->
+            <!-- Start Navigation -->
+			
+			<!-- End Navigation -->
+			<div class="clearfix"></div>
+			<!-- ============================================================== -->
+			<!-- Top header  -->
+			<!-- ============================================================== -->
+
+			<!-- ============================ Page Title Start================================== -->
+			<div class="page-title py-2 px-3" style="background-color: #8BB0F8;" >
+				
+						<div class="col-lg-12 col-md-12 d-flex  " style="justify-content: space-between;">
+							<div>
+								<img src="{% static 'img/drdo.png'%}" alt="" style="height: 80px; width:80px">
+							</div>
+							<a class=" d-flex" style=" flex-direction: column; align-items: left; justify-content: center;"href="/">
+                            	<h3 style="color: red;" >Dashboard</h3>
+							</a>
+						</div>
+				
+			</div>
+            {% block body %}{% endblock body %}
+            <div style="background-color: #4E6AA0;height: 10vh;"></div>
+			
+			
+			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+			
+
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Wrapper -->
+		<!-- ============================================================== -->
+
+		<!-- ============================================================== -->
+		<!-- All Jquery -->
+		<!-- ============================================================== -->
+		<script src="{% static 'js/jquery.min.js'%}"></script>
+		<script src="{% static 'js/popper.min.js'%}"></script>
+		<script src="{% static 'js/bootstrap.min.js'%}"></script>
+		<script src="{% static 'js/select2.min.js'%}"></script>
+		<script src="{% static 'js/slick.js'%}"></script>
+		<script src="{% static 'js/jquery.counterup.min.js'%}"></script>
+		<script src="{% static 'js/counterup.min.js'%}"></script>
+		<script src="{% static 'js/custom.js'%}"></script>
+		<!-- ============================================================== -->
+		<!-- This page plugins -->
+		<!-- ============================================================== -->
+
+		<script>// Get the card element
+			const card = document.querySelector('.card4');
+			
+			// Add event listeners for mouseover and mouseout
+			card.addEventListener('mouseover', function () {
+			  this.classList.add('flipped');
+			});
+			
+			card.addEventListener('mouseout', function () {
+			  this.classList.remove('flipped');
+			});
+			const card1 = document.querySelector('.card1');
+			
+			// Add event listeners for mouseover and mouseout
+			card1.addEventListener('mouseover', function () {
+			  this.classList.add('flipped1');
+			});
+			
+			card1.addEventListener('mouseout', function () {
+			  this.classList.remove('flipped1');
+			});
+			const card2 = document.querySelector('.card2');
+			
+			// Add event listeners for mouseover and mouseout
+			card2.addEventListener('mouseover', function () {
+			  this.classList.add('flipped2');
+			});
+			
+			card2.addEventListener('mouseout', function () {
+			  this.classList.remove('flipped2');
+			});
+			const card3 = document.querySelector('.card3');
+			
+			// Add event listeners for mouseover and mouseout
+			card3.addEventListener('mouseover', function () {
+			  this.classList.add('flipped3');
+			});
+			
+			card3.addEventListener('mouseout', function () {
+			  this.classList.remove('flipped3');
+			})
+			</script>
+	</body>
+</html>

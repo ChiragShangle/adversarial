@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-def index(request):
+def evasion(request):
     model=None
     attack=None
     parameter=None
@@ -11,10 +11,10 @@ def index(request):
         model = request.POST.get('model')
         attack = request.POST.get('attack')
         parameter=request.POST.get('parameters')
-    return render(request,"checkout.html",{'model':model , 'attack':attack, 'parameter':parameter})
-# Create your views here.
+    return render(request,"evasion.html",{'model':model , 'attack':attack, 'parameter':parameter})
 
-# def fetch(request):
-#  if request.method == 'POST':
-#     model=request.POST.get('model')
-        
+
+def homepage(request):
+    return render(request,"homepage.html")
+def robustness(request):
+    return render(request,"robustness.html")
