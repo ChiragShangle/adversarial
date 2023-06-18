@@ -2,14 +2,14 @@
 {% extends 'header.html' %}
 {% load static %}
 {% block body %}
-<div class=" gray" style="padding: 50px;">
+<div class=" gray" style="padding: 50px;height: 80vh;">
     <div class="container-fluid">
                             
         <div class="col-lg-12" style="text-align: center;"><h1>ROBUSTNESS</h1></div>
         <div class="row mx-3">
             <div class="col-lg-12  ">
                 <div class="dashboard-navbar"  style="height: 15vh;background-color: #D9D9D9;">
-                
+                    Robustness in machine learning refers to the ability of a model to maintain its performance and generalization capabilities in the presence of various perturbations, such as noise in the input data, adversarial attacks, or distribution shifts. A robust machine learning model is less susceptible to errors or performance degradation when exposed to unexpected or adversarial inputs.
                 </div>
                 
                 
@@ -25,8 +25,8 @@
                     <div class="dashboard-navbar card-front" style=" background-color: #D9D9D9;" >
                         Evasion Attacks
                     </div>
-                    <div class=" card-back" >
-                        HELLO
+                    <div class=" card-back" style="height: auto;" >
+                        Evasion is the most common attack on the machine learning model performed during inference. It refers to designing an input, which seems normal for a human but is wrongly classified by ML models.
                     </div>
                     
                     
@@ -34,11 +34,11 @@
             </a>
             <a href="/robustness" class="col-lg-2 col-md-3 card1">
                 <div class="card1">
-                    <div class="dashboard-navbar card-front" style=" background-color: #D9D9D9;">
+                    <div class="dashboard-navbar card-front" style=" background-color: #D9D9D9; ">
                         Poison Attacks
                     </div>
-                    <div class=" card-back" style="top: 0; " >
-                        HELLO
+                    <div class=" card-back" style="top: 0; height: auto; " >
+                        A poisoning attack happens when the adversary is able to inject bad data into your model’s training pool, and hence get it to learn something it shouldn’t. The most common result of a poisoning attack is that the model’s boundary shifts in some way
                     </div>
                     
                     
@@ -49,8 +49,8 @@
                     <div class="dashboard-navbar card-front"style=" background-color: #D9D9D9;"  >
                         Extraction Attacks
                     </div>
-                    <div class=" card-back"  >
-                        HELLO
+                    <div class=" card-back" style="height: auto;" >
+                        An extraction attack in the context of machine learning refers to a type of attack where an adversary attempts to extract sensitive information or gain insights about the training data or model parameters used in a machine learning system. 
                     </div>
                 </div>	
             </a>		
