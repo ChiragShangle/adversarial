@@ -10,8 +10,7 @@ def evasion(request):
     if request.method == 'POST':
         model = request.POST.get('model')
         attack = request.POST.get('attack')
-        parameter=request.POST.get('parameters')
-    return render(request,"evasion.html",{'model':model , 'attack':attack, 'parameter':parameter})
+    return render(request,"evasion.html",{'model':model , 'attack':attack, 'parameter':parameter, 'range':range})
 
 
 def homepage(request):
