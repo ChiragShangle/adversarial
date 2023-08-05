@@ -1,0 +1,127 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block body %}
+			<section  style="height: 80vh; padding: 0;">
+				
+    			<img class="bg" src="{% static 'img/back.jpg'%}" alt="" style="height: 80vh; width: 100%;">
+				<div class="container-fluid pt-5" >
+					<div class="col-lg-12" style="text-align: center;"><h1 style="color: white; margin-bottom: 20px;">EVASION ATTACKS</h1></div>					
+					
+					<div class="row mx-3" style="display: flex;justify-content: space-around;">
+						<div class="col-lg-5 dashboard-navbar" style="background-color: white; display: flex; flex-direction: column;align-items: center;">					
+							<div class="col-lg-8 col-md-8 col-sm-12 ">
+								<form id="myForm" name = "form1" class="form" method="POST"  	 >
+									{% csrf_token %}
+									<div class="form-group">
+										<label>Model selection</label>
+										<select  id="model" name="model" class="form-control">
+											<option value="" disabled selected>Select</option>
+											<option value="DenseNet">DenseNet</option>
+											<option value="EfficientNetB0">EfficientNetB0</option>
+											<option value="EfficientNetB7">EfficientNetB7</option>
+											<option value="InceptionV3">InceptionV3</option>
+											<option value="MobileNet">MobileNet</option>
+											<option value="NasNet">NasNet</option>
+											<option value="ResNet50">ResNet50</option>
+											<option value="VGG16">VGG16</option>
+											<option value="VGG19">VGG19</option>
+											<option value="Xception">Xception</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>Attacks</label>
+										<select id="attack" name="attack" class="form-control">
+											<option value="" disabled selected>Select</option>
+											
+											<option value="FGSM">FGSM</option>
+											<option value="BIM">BIM</option>
+											<option value="PGD">PGD</option>
+											<option value="DeepFool">DeepFool</option>
+											<option value="C&W">C&W</option>
+										</select>
+									</div>
+									<!-- <div class="form-group">
+										<label>Parameters</label>
+										<select id="parameters" name="parameters" class="form-control">
+											<option value="" disabled selected>Select</option>
+											<option value="eps">eps</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+										</select>
+									</div> -->
+									<button type="submit" onclick="showbox()" class="btn-red btn-md full-width">Submit</button>
+								</form>
+							</div>
+						</div>	
+							
+						<div class="col-lg-5 col-md-5" >
+							<div class="dashboard-navbar"  style="height: 100%;">
+								<h3>Model:</h3>		
+								<h2>{{model}}</h2>
+								<h3>Attack:</h3>
+								<h2>{{attack}}</h2>
+								<h3>Parameter:</h3>
+								<h2>{{parameter}}</h2>
+								<h3>Range:</h3>
+								<h2>{{range}}</h2>
+							</div>
+							
+							
+						</div>	
+						<!-- <div class="col-lg-5 col-md-5">
+							<div class="dashboard-navbar" id="visiblebox" style="height: 100%;display: flex; align-items: center; justify-content: center;">
+								<img src="{% static 'img/img/back.jpg'%}" style="height: 50vh; width: 100%;;"  alt="">
+							</div>
+							
+							
+						</div> -->
+					</div>
+					
+				</div>
+			</section>
+			
+		<script>
+// 			  var attack1 = {
+//     Model1: ["FGSM", "PGD", "DEEP FOOL"],
+//     Model2: ["FGSM", "PGD", "DEEP FOOL","BIM"],
+//     Model3: ["FGSM", "PGD", "DEEP FOOL","BIM","C&W"]
+// }
+
+//     function changecat1(value) {
+//         if (value.length == 0) document.getElementById("attack").innerHTML = "<option></option>";
+//         else {
+//             var catOptions = "";
+//             for (categoryId in attack1[value]) {
+//                 catOptions += "<option>" + attack1[value][categoryId] + "</option>";
+//             }
+//             document.getElementById("attack").innerHTML = catOptions;
+//         }
+//     }
+	function showbox() {
+		var hiddenParagraph = document.getElementById('hiddenbox');
+		hiddenParagraph.style.display = 'block';
+		
+	}
+		</script>
+		<script>
+			function submitForm() {
+			  var form = document.getElementById("myForm");
+			  var formData = new FormData(form);
+			  
+			  var xhr = new XMLHttpRequest();
+			  xhr.open("POST", "http://127.0.0.1:8000/evasion", true);
+			  
+			  xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+				  // Handle the response from the server
+				  console.log(xhr.responseText);
+				}
+			  };
+			  
+			  xhr.send(formData);
+			}
+		  </script>
+{% endblock body%}
+
+	
