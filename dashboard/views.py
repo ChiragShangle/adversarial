@@ -7,9 +7,14 @@ def evasion(request):
     model=None
     attack=None
     parameter=None
+    range=None
     if request.method == 'POST':
         model = request.POST.get('model')
         attack = request.POST.get('attack')
+    if model == 'DenseNet':
+        if attack == 'FGSM':
+            parameter= 'accuracy'
+            range= '64 - 99%'    
     return render(request,"evasion.html",{'model':model , 'attack':attack, 'parameter':parameter, 'range':range})
 
 
